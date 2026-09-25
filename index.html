@@ -477,13 +477,13 @@
         <h2 class="rv">Built, not bought. AI as a working tool, running under my desk.</h2>
         <p class="lede rv">A mini PC in my home office indexes 20 years of my own emails, contracts and scanned documents. A set of agents works on top of it every day. The audience is 1, and he is the most demanding customer I have.</p>
       </div>
-      <div class="bimg term rv" role="img" aria-label="Terminal output from the home server: 3 healthy containers, 15 scheduled agents, 13 GB RAM"><pre><i>$</i> docker ps
+      <div class="bimg term rv" role="img" aria-label="Terminal output from the home server: 3 healthy containers, 14 scheduled agents, 13 GB RAM"><pre><i>$</i> docker ps
 qdrant    <b>Up, healthy</b>   vector store
 api       <b>Up, healthy</b>   search + chat
 n8n       <b>Up</b>            workflows
 
 <i>$</i> systemctl list-timers | grep -c jcd
-<b>15</b>  scheduled agents
+<b>14</b>  scheduled agents
 
 <i>$</i> free -h | head -2
 13 GB RAM, 16 threads, 1 mini PC
@@ -493,15 +493,15 @@ n8n       <b>Up</b>            workflows
     <div class="stats rv">
       <div class="stat"><div class="v">170<small>K+</small></div><div class="l">indexed chunks: emails, contracts, scans, bank exports</div></div>
       <div class="stat"><div class="v">83<small>K</small></div><div class="l">lines of Python in the repo, most of it written with Claude Code</div></div>
-      <div class="stat"><div class="v">15</div><div class="l">scheduled agents on systemd timers, reporting by Telegram</div></div>
+      <div class="stat"><div class="v">14</div><div class="l">scheduled agents on systemd timers, reporting by Telegram</div></div>
       <div class="stat"><div class="v">&lt;60<small>s</small></div><div class="l">from a scan landing in the drop folder to classified, renamed and filed</div></div>
     </div>
 
     <div class="flow rv">
       <div class="node"><svg class="ico"><use href="#i-inbox"/></svg><h4>Sources</h4><p>Everything I produce or receive lands in one place.</p><ul><li>Outlook and Gmail</li><li>Contracts on the NAS</li><li>Scanner, one drop folder</li><li>Bank exports, meeting notes</li></ul></div>
       <div class="node"><svg class="ico"><use href="#i-gear"/></svg><h4>Ingestion</h4><p>Watchers pick files up in seconds and make them searchable.</p><ul><li>Docling and OCR</li><li>Small model classifies and renames</li><li>Dedup by content hash</li><li>Dry-run audit after each batch</li></ul></div>
-      <div class="node"><svg class="ico"><use href="#i-db"/></svg><h4>Memory</h4><p>One vector store, hybrid search, never exposed to the internet.</p><ul><li>Qdrant, 8 collections</li><li>Dense plus keyword retrieval</li><li>FastAPI on Docker</li><li>Nightly backup to NAS, mount-checked</li></ul></div>
-      <div class="node"><svg class="ico"><use href="#i-bot"/></svg><h4>Agents</h4><p>Where the work actually gets done.</p><ul><li>Claude Code through MCP</li><li>Chat with cited sources</li><li>N8N workflows</li><li>15 timers, Telegram alerts</li></ul></div>
+      <div class="node"><svg class="ico"><use href="#i-db"/></svg><h4>Memory</h4><p>One vector store, hybrid search, never exposed to the internet.</p><ul><li>Qdrant, 10 collections</li><li>Dense plus keyword retrieval</li><li>FastAPI on Docker</li><li>Nightly backup to NAS, mount-checked</li></ul></div>
+      <div class="node"><svg class="ico"><use href="#i-bot"/></svg><h4>Agents</h4><p>Where the work actually gets done.</p><ul><li>Claude Code through MCP</li><li>Chat with cited sources</li><li>N8N workflows</li><li>14 timers, Telegram alerts</li></ul></div>
     </div>
     <div class="flow-cap">Version-controlled, 780+ tests, a Sunday audit of every open port. Most of what I know about running AI in production I learned from my own incidents: a backup that silently wrote to the local disk for weeks, a watcher that ate files mid-copy, a preview server I forgot for a week. Each one became a check.</div>
 
@@ -532,7 +532,7 @@ n8n       <b>Up</b>            workflows
       <div class="panel rv">
         <div class="ph"><h3>Skills</h3><span class="lbl">Self-assessed, with a receipt</span></div>
         <div class="cap">5 means done repeatedly, with numbers. 3 means done, I would not headline it. 2 means out of practice.</div>
-        <div class="bars"><div class="brow"><span class="nm">Enterprise closing</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">239% FY25 · EUR 8M TCV</span></div><div class="brow"><span class="nm">Deal structuring</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">ramps, credits, conditional terms</span></div><div class="brow"><span class="nm">German buying committees</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">25 yrs, negotiated in German</span></div><div class="brow"><span class="nm">Supply chain domain</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">10 yrs selling, 14 delivering</span></div><div class="brow"><span class="nm">Orchestration without authority</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">20+ people, one deadline</span></div><div class="brow"><span class="nm">Building with AI</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i></span><span class="rcp">170K chunks, 15 agents, in use</span></div><div class="brow"><span class="nm">Net new hunting</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i></span><span class="rcp">3 logos in 2020, then installed base</span></div><div class="brow"><span class="nm">Formal people management</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></span><span class="rcp">8 to 15 people, until 2015</span></div></div>
+        <div class="bars"><div class="brow"><span class="nm">Enterprise closing</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">239% FY25 · EUR 8M TCV</span></div><div class="brow"><span class="nm">Deal structuring</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">ramps, credits, conditional terms</span></div><div class="brow"><span class="nm">German buying committees</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">25 yrs, negotiated in German</span></div><div class="brow"><span class="nm">Supply chain domain</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">10 yrs selling, 14 delivering</span></div><div class="brow"><span class="nm">Orchestration without authority</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i></span><span class="rcp">20+ people, one deadline</span></div><div class="brow"><span class="nm">Building with AI</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i></span><span class="rcp">170K chunks, 14 agents, in use</span></div><div class="brow"><span class="nm">Net new hunting</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i></span><span class="rcp">3 logos in 2020, then installed base</span></div><div class="brow"><span class="nm">Formal people management</span><span class="bar"><i class="seg on"></i><i class="seg on"></i><i class="seg"></i><i class="seg"></i><i class="seg"></i></span><span class="rcp">8 to 15 people, until 2015</span></div></div>
       </div>
     </div>
     <div class="notme rv"><svg class="ico"><use href="#i-info"/></svg><span>What I would not claim: transactional or product-led velocity sales, and running a sales team. If the role needs either as its core, I am the wrong hire, and I would rather say it here than in month 4.</span></div>
@@ -861,7 +861,7 @@ n8n       <b>Up</b>            workflows
    "ia",
    "automation"
   ],
-  "a": "A mini PC under my desk indexes 20 years of my own emails, contracts and scans: 170K+ chunks, hybrid search, never exposed to the internet. 15 scheduled agents work on top of it, 83K lines of Python, 780+ tests, most of it written with Claude Code. It files my paperwork in under 60 seconds, builds my QBR decks and answers questions with cited sources. I am a salesman, not an engineer. But I know what running AI in production actually takes, because I run it.",
+  "a": "A mini PC under my desk indexes 20 years of my own emails, contracts and scans: 170K+ chunks, hybrid search, never exposed to the internet. 14 scheduled agents work on top of it, 83K lines of Python, 780+ tests, most of it written with Claude Code. It files my paperwork in under 60 seconds, builds my QBR decks and answers questions with cited sources. I am a salesman, not an engineer. But I know what running AI in production actually takes, because I run it.",
   "ref": [
    "What I build",
    "#build"
