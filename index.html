@@ -149,7 +149,7 @@
   .bintro { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: end; }
   .bimg { position: relative; height: 300px; border-radius: 14px; overflow: hidden; border: 1px solid var(--dark-line); }
   .bimg img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(0.15) brightness(0.9) contrast(1.03); }
-  .bimg.term { background: #0B0F13; display: flex; align-items: center; }
+  .bimg.term { background: #0B0F13; display: flex; align-items: center; height: auto; min-height: 300px; }
   .bimg.term pre { margin: 0; padding: 22px 24px 46px; font-family: 'Geist Mono', monospace; font-size: 12.5px; line-height: 1.7; color: rgba(244,243,239,0.82); white-space: pre-wrap; }
   .bimg.term pre i { font-style: normal; color: #6FA8DC; }
   .bimg.term pre b { font-weight: 500; color: #8FD19E; }
@@ -233,7 +233,7 @@
   .twin { padding: 7px; border-radius: 26px; background: rgba(16,20,24,0.035); box-shadow: inset 0 0 0 1px rgba(16,20,24,0.06); }
   .twin-core { background: var(--white); border-radius: 19px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 30px 60px rgba(16,20,24,0.07); overflow: hidden; display: flex; flex-direction: column; }
   .twin-hd { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 15px 20px; background: var(--bg); box-shadow: 0 1px 0 var(--line); }
-  .twin-hd b { font-weight: 600; font-size: 14px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; }
+  .twin-hd b { font-weight: 600; font-size: 14px; letter-spacing: -0.01em; display: flex; align-items: center; gap: 10px; white-space: nowrap; flex-shrink: 0; }
   .twin-hd b i { width: 8px; height: 8px; border-radius: 50%; background: #2E9E5B; box-shadow: 0 0 0 4px rgba(46,158,91,0.15); display: inline-block; }
   .twin-log { height: 380px; overflow-y: auto; padding: 22px 20px 8px; display: flex; flex-direction: column; gap: 14px; scroll-behavior: smooth; }
   .msg { max-width: 88%; font-size: 15px; line-height: 1.58; opacity: 0; transform: translateY(10px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
@@ -278,6 +278,7 @@
     .deal:not(:first-child) { padding-left: 0; }
     .stats { grid-template-columns: 1fr 1fr; }
     .stat { border-right: none; padding: 20px 0; }
+    .stat:not(:first-child) { padding-left: 0; }
     .flow { grid-template-columns: 1fr 1fr; }
     .node + .node::before { display: none; }
     .builds, .contact, .bintro { grid-template-columns: 1fr; }
