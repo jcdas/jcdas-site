@@ -12,7 +12,7 @@
 <style>
   :root {
     --bg: #F6F6F4; --bg2: #ECEDE9; --white: #FFFFFF;
-    --ink: #101418; --ink2: #464E58; --ink3: #7A838D;
+    --ink: #101418; --ink2: #464E58; --ink3: #5E6772;
     --line: #DCDFE2; --line2: #C7CCD1;
     --accent: #1F4E79; --accent2: #2F6DA6;
     --dark: #0C1014; --dark2: #141A20; --dark-line: rgba(255,255,255,0.08);
@@ -167,7 +167,7 @@
   .build .ib { width: 44px; height: 44px; border-radius: 10px; background: var(--dark2); border: 1px solid var(--dark-line); display: flex; align-items: center; justify-content: center; color: #7FB0DF; }
   .build h4 { font-weight: 600; font-size: 17px; letter-spacing: -0.01em; color: #F4F3EF; }
   .build p { margin-top: 6px; font-size: 14.5px; color: #A6AEB7; line-height: 1.55; }
-  .build .st { margin-top: 8px; font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #7FB0DF; letter-spacing: 0.04em; }
+  .build .stk { margin-top: 8px; font-family: 'Geist Mono', monospace; font-size: 11.5px; color: #7FB0DF; letter-spacing: 0.04em; }
 
 
 
@@ -417,7 +417,7 @@
     <h2 class="rv">10 years of quota. 14 years of delivery before that.</h2>
     <table class="rec rv" style="margin-top:40px;">
       <tr><td class="y">2023 · today</td><td class="c">Blue Yonder<small>Supply chain SaaS, formerly JDA</small></td><td class="r">Senior Account Executive, EMEA discrete manufacturing. DACH book of 5 Tier 1 industrial groups, on-premise to SaaS conversions, renewals and expansion.</td><td class="p">FY23 50% · FY24 90% · FY25 239%</td></tr>
-      <tr><td class="y">2021 · 2023</td><td class="c">BMC Software<small>IT operations software</small></td><td class="r">Product Account Manager, 15 Tier 1 DACH accounts. 15 Tier 1 DACH accounts, 70% licenses and 30% SaaS in the portfolio.</td><td class="p">EUR 19M TCV closed</td></tr>
+      <tr><td class="y">2021 · 2023</td><td class="c">BMC Software<small>IT operations software</small></td><td class="r">Product Account Manager, 15 Tier 1 DACH accounts, 70% licenses and 30% SaaS in the portfolio.</td><td class="p">EUR 19M TCV closed</td></tr>
       <tr><td class="y">2018 · 2021</td><td class="c">Transporeon<small>Logistics SaaS</small></td><td class="r">Corporate Account Executive, net new logos with EUR 5B+ manufacturers across EMEA, consumption-based pricing.</td><td class="p">200% quota 2020</td></tr>
       <tr><td class="y">2017 · 2018</td><td class="c">GT Nexus<small>Supply chain network, Infor</small></td><td class="r">Global Account Manager, 50 named manufacturer accounts, pipeline built from zero.</td><td class="p">EUR 2M pipeline</td></tr>
       <tr><td class="y">2013 · 2017</td><td class="c">Elemica<small>Chemical and tire supply chain network</small></td><td class="r">Functional Delivery Director (15-person team), then Global Key Account Director. The move from delivery into quota, same company, same accounts.</td><td class="p">110% target 2017</td></tr>
@@ -502,12 +502,12 @@ n8n       <b>Up</b>            workflows
     <div class="flow-cap">Version-controlled, 780+ tests, a Sunday audit of every open port. Most of what I know about running AI in production I learned from my own incidents: a backup that silently wrote to the local disk for weeks, a watcher that ate files mid-copy, a preview server I forgot for a week. Each one became a check.</div>
 
     <div class="builds rv">
-      <div class="build"><div class="ib"><svg class="ico"><use href="#i-chat"/></svg></div><div><h4>Cortex</h4><p>Chat over my own archive with cited, clickable sources. 2-stage retrieval: entity extraction first, then dense search filtered on the entities, because conversational questions drown proper nouns in the embedding.</p><div class="st">FastAPI · Qdrant · Claude · SSE</div></div></div>
-      <div class="build"><div class="ib"><svg class="ico"><use href="#i-inbox"/></svg></div><div><h4>INBOUND dispatcher</h4><p>One drop folder for everything. A watcher classifies each file with a small model, renames it to a house convention and files it in the right place in under a minute.</p><div class="st">systemd path units · Haiku · Docling</div></div></div>
-      <div class="build"><div class="ib"><svg class="ico"><use href="#i-bell"/></svg></div><div><h4>Career watch</h4><p>Weekly scan of Greenhouse, Lever, Ashby and SAP job boards for a handful of target companies. Telegram alert only when something relevant opens. It found the posting this page was partly written for.</p><div class="st">Python · cron · Telegram</div></div></div>
-      <div class="build"><div class="ib"><svg class="ico"><use href="#i-slides"/></svg></div><div><h4>Deck automation</h4><p>QBR and business update decks generated from the RAG in my employer's house style, including the workaround for a python-pptx rendering bug that nobody documents.</p><div class="st">python-pptx · Claude · RAG</div></div></div>
-      <div class="build"><div class="ib"><svg class="ico"><use href="#i-shield"/></svg></div><div><h4>Drift audit</h4><p>Sunday evening audit of every listener, port and container on the server against a known list. Anything orphaned gets reported by Telegram.</p><div class="st">Python · systemd · Docker API</div></div></div>
-      <div class="build"><div class="ib"><svg class="ico"><use href="#i-globe"/></svg></div><div><h4>bergische-lk.de</h4><p>The site for the youth tennis tournaments I organise in the Bergisches Land: dates and venues, rules, registration, and a direct line to me for families and clubs. Bilingual German and English, no tracking. Shipped, hosted, maintained.</p><div class="st">Static HTML · data-driven content · GitHub Pages</div></div></div>
+      <div class="build"><div class="ib"><svg class="ico"><use href="#i-chat"/></svg></div><div><h4>Cortex</h4><p>Chat over my own archive with cited, clickable sources. 2-stage retrieval: entity extraction first, then dense search filtered on the entities, because conversational questions drown proper nouns in the embedding.</p><div class="stk">FastAPI · Qdrant · Claude · SSE</div></div></div>
+      <div class="build"><div class="ib"><svg class="ico"><use href="#i-inbox"/></svg></div><div><h4>INBOUND dispatcher</h4><p>One drop folder for everything. A watcher classifies each file with a small model, renames it to a house convention and files it in the right place in under a minute.</p><div class="stk">systemd path units · Haiku · Docling</div></div></div>
+      <div class="build"><div class="ib"><svg class="ico"><use href="#i-bell"/></svg></div><div><h4>Career watch</h4><p>Weekly scan of Greenhouse, Lever, Ashby and SAP job boards for a handful of target companies. Telegram alert only when something relevant opens. It found the posting this page was partly written for.</p><div class="stk">Python · cron · Telegram</div></div></div>
+      <div class="build"><div class="ib"><svg class="ico"><use href="#i-slides"/></svg></div><div><h4>Deck automation</h4><p>QBR and business update decks generated from the RAG in my employer's house style, including the workaround for a python-pptx rendering bug that nobody documents.</p><div class="stk">python-pptx · Claude · RAG</div></div></div>
+      <div class="build"><div class="ib"><svg class="ico"><use href="#i-shield"/></svg></div><div><h4>Drift audit</h4><p>Sunday evening audit of every listener, port and container on the server against a known list. Anything orphaned gets reported by Telegram.</p><div class="stk">Python · systemd · Docker API</div></div></div>
+      <div class="build"><div class="ib"><svg class="ico"><use href="#i-globe"/></svg></div><div><h4>bergische-lk.de</h4><p>The site for the youth tennis tournaments I organise in the Bergisches Land: dates and venues, rules, registration, and a direct line to me for families and clubs. Bilingual German and English, no tracking. Shipped, hosted, maintained.</p><div class="stk">Static HTML · data-driven content · GitHub Pages</div></div></div>
     </div>
 
   </div>
