@@ -249,8 +249,10 @@
   .twin-in button:active { transform: scale(0.95); }
   .twin-in button .ico { width: 16px; height: 16px; transition: transform 500ms var(--ease); }
 
-  .rv { opacity: 0; transform: translateY(18px); transition: opacity 900ms var(--ease), transform 900ms var(--ease); }
+  .rv { opacity: 0.4; transform: translateY(10px); transition: opacity 400ms var(--ease), transform 400ms var(--ease); }
   .rv.in { opacity: 1; transform: none; }
+  table.rv { opacity: 0.6; transition: opacity 220ms var(--ease); }
+  table.rv.in { opacity: 1; }
 
   @media (max-width: 960px) {
     body { font-size: 16px; }
