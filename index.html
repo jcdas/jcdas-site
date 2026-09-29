@@ -60,6 +60,16 @@
   .top nav a:hover { background: var(--bg2); color: var(--ink); }
   .top nav a.cta { color: var(--white); background: var(--ink); margin-left: 8px; display: inline-flex; align-items: center; gap: 8px; }
   .top nav a.cta:hover { background: var(--accent); }
+  .menu-btn { display: none; width: 42px; height: 42px; border-radius: 10px; border: 1px solid var(--line2); background: var(--white); align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; }
+  .menu-btn .ico { width: 19px; height: 19px; color: var(--ink); }
+  .mnav { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--bg); border-bottom: 1px solid var(--line); box-shadow: 0 24px 48px rgba(16,20,24,0.1); max-height: 0; overflow: hidden; transition: max-height 420ms var(--ease); }
+  .mnav.open { max-height: 560px; }
+  .mnav a { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 17px 24px; font-size: 16px; font-weight: 500; color: var(--ink); border-top: 1px solid var(--line); }
+  .mnav a:first-child { border-top: none; }
+  .mnav a:active { background: var(--bg2); }
+  .mnav-n { font-family: 'Geist Mono', monospace; font-size: 12px; color: var(--ink3); letter-spacing: 0.06em; }
+  .mnav-cta { background: var(--ink); color: var(--white) !important; margin: 14px 24px 20px; padding: 15px 18px !important; border-radius: 10px; border-top: none !important; }
+  .mnav-cta .ico { width: 16px; height: 16px; }
 
   /* hero */
   .hero { padding: 92px 0 72px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 64px; align-items: end; }
@@ -277,6 +287,11 @@
     .wrap { width: calc(100% - 32px); }
     .sec { padding: 64px 0; }
     .top nav a:not(.cta) { display: none; }
+    .top nav a.cta { margin-left: 0; }
+    .top .wrap { gap: 12px; }
+    .top nav { margin-left: auto; }
+    .menu-btn { display: flex; }
+    .mnav { display: flex; flex-direction: column; }
     .hero { grid-template-columns: 1fr; gap: 36px; padding: 48px 0 48px; }
     .band { height: 300px; }
     .deals { grid-template-columns: 1fr; }
@@ -338,6 +353,8 @@
   <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8.2 19L4 20z"/><path d="M9.5 9.5c0 3 2 5 5 5l1-1.5-2-1-1 .8a4 4 0 0 1-1.6-1.6l.8-1-1-2z"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/></symbol>
   <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
 </svg>
 
 <div class="top">
@@ -353,6 +370,19 @@
       <a href="#contact">Contact</a>
       <a class="cta" href="assets/Jean-Charles_Das_CV.pdf">CV, PDF <svg class="ico" style="width:15px;height:15px"><use href="#i-down"/></svg></a>
     </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mnav" aria-label="Open menu">
+      <svg class="ico" id="menu-ico"><use href="#i-menu"/></svg>
+    </button>
+  </div>
+  <div class="mnav" id="mnav">
+    <a href="#strengths"><span>Strengths</span><span class="mnav-n">01</span></a>
+    <a href="#record"><span>Track record</span><span class="mnav-n">02</span></a>
+    <a href="#deals"><span>How I sell</span><span class="mnav-n">03</span></a>
+    <a href="#build"><span>What I build</span><span class="mnav-n">04</span></a>
+    <a href="#skills"><span>Skills</span><span class="mnav-n">05</span></a>
+    <a href="#ask"><span>Ask JC</span><span class="mnav-n">06</span></a>
+    <a href="#contact"><span>Contact</span><span class="mnav-n">07</span></a>
+    <a class="mnav-cta" href="assets/Jean-Charles_Das_CV.pdf"><span>Download the CV</span><svg class="ico"><use href="#i-down"/></svg></a>
   </div>
 </div>
 
@@ -1240,6 +1270,22 @@ n8n       <b>Up</b>            workflows
     es.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('in'), (i % 6) * 70); io.unobserve(e.target); } });
   }, { threshold: 0.08 });
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+  // Mobile/tablet menu: section shortcuts, no framework
+  (function(){
+    const btn = document.getElementById('menu-btn'), ico = document.getElementById('menu-ico'), nav = document.getElementById('mnav');
+    if (!btn || !nav) return;
+    const setOpen = (open) => {
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      ico.querySelector('use').setAttribute('href', open ? '#i-close' : '#i-menu');
+    };
+    btn.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setOpen(false)));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+    document.addEventListener('click', (e) => { if (nav.classList.contains('open') && !nav.contains(e.target) && !btn.contains(e.target)) setOpen(false); });
+    window.addEventListener('resize', () => { if (window.innerWidth > 960) setOpen(false); });
+  })();
 
 
 
