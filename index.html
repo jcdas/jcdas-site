@@ -126,6 +126,15 @@ h2 { font-size: clamp(26px, 3.2vw, 34px); font-weight: 600; letter-spacing: -0.0
 .kit span { font-size: 13px; border: 1px solid var(--line); background: var(--surface); padding: 4px 10px; border-radius: 6px; color: var(--ink-2); }
 .kit .k { border: 0; background: none; padding: 0 6px 0 0; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 @media (max-width: 640px) { .mo { grid-template-columns: 36px 1fr; } .mo .r { grid-column: 2; text-align: left; white-space: normal; } }
+.sk2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 40px; }
+.sub { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.dolist { list-style: none; border-top: 1px solid var(--line); }
+.dolist li { display: flex; align-items: center; gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+.dolist .ic { width: 32px; height: 32px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+.dolist svg.i { width: 18px; height: 18px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { font-size: 14px; border: 1px solid var(--line); background: var(--surface); padding: 6px 12px; border-radius: 6px; color: var(--ink-2); }
+@media (max-width: 760px) { .sk2 { grid-template-columns: 1fr; gap: 36px; } }
 .honest { margin-top: 28px; font-size: 14px; color: var(--muted); max-width: 720px; }
 .honest b { color: var(--ink-2); font-weight: 500; }
 @media (max-width: 900px) { .bento .card, .bento .card.wide { grid-column: span 3; } }
@@ -270,16 +279,23 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
 <section id="skills">
   <div class="wrap">
     <div class="eyebrow rv">Skills</div>
-    <h2 class="rv">Deal situations I have handled.</h2>
-    <div class="motions rv">
-      <div class="mo"><div class="ic"><svg class="i"><use href="#i-cloud"/></svg></div><div class="t"><b>On-premise to SaaS conversion</b><small>Sensors, pharma, building materials · 2025</small></div><div class="r">3 groups converted</div></div>
-      <div class="mo"><div class="ic"><svg class="i"><use href="#i-doc"/></svg></div><div class="t"><b>Contract negotiation in German</b><small>Konzern procurement and legal: master agreements, schedules, SOWs</small></div><div class="r">3 frameworks signed, 2025</div></div>
-      <div class="mo"><div class="ic"><svg class="i"><use href="#i-scale"/></svg></div><div class="t"><b>Price indexation dispute</b><small>Global tire manufacturer · 2026</small></div><div class="r">Settled at 4,07%</div></div>
-      <div class="mo"><div class="ic"><svg class="i"><use href="#i-plane"/></svg></div><div class="t"><b>Expansion from German HQ to the US</b><small>Building materials group · 2025</small></div><div class="r">CFO, CCO and COO met</div></div>
-      <div class="mo"><div class="ic"><svg class="i"><use href="#i-plus"/></svg></div><div class="t"><b>Net new logos</b><small>EUR 5B+ manufacturers across EMEA · 2020</small></div><div class="r">200% of quota</div></div>
-      <div class="mo"><div class="ic"><svg class="i"><use href="#i-layers"/></svg></div><div class="t"><b>Large mixed portfolio</b><small>15 Tier 1 DACH accounts, licenses and SaaS · 2021 to 2023</small></div><div class="r">EUR 19M TCV</div></div>
+    <h2 class="rv">What I do, and for whom.</h2>
+    <div class="sk2">
+      <div class="rv"><div class="sub">What I do</div><ul class="dolist">
+        <li><span class="ic"><svg class="i"><use href="#i-cloud"/></svg></span>On-premise to SaaS conversion</li>
+        <li><span class="ic"><svg class="i"><use href="#i-layers"/></svg></span>Renewal and expansion</li>
+        <li><span class="ic"><svg class="i"><use href="#i-target"/></svg></span>Full cycle, outbound to close</li>
+        <li><span class="ic"><svg class="i"><use href="#i-blueprint"/></svg></span>Value engineering</li>
+        <li><span class="ic"><svg class="i"><use href="#i-factory"/></svg></span>Buying committees in German groups</li>
+        <li><span class="ic"><svg class="i"><use href="#i-doc"/></svg></span>DACH procurement and legal</li>
+        <li><span class="ic"><svg class="i"><use href="#i-plus"/></svg></span>Consumption pricing</li>
+        <li><span class="ic"><svg class="i"><use href="#i-network"/></svg></span>Account planning</li>
+      </ul></div>
+      <div class="rv" style="--d:1"><div class="sub">Industries</div><div class="chips"><span>Automotive Tier 1</span><span>Steel and metals</span><span>Sensors and automation</span><span>Building materials</span><span>Chemical and tire</span><span>Pharma</span><span>Hi-tech</span><span>Logistics</span></div>
+        <div class="sub" style="margin-top:32px">Tools and method</div><div class="chips"><span>MEDDIC, certified</span><span>Salesforce</span><span>Clari</span><span>Sales Navigator</span><span>Claude Code</span></div>
+        <div class="sub" style="margin-top:32px">Languages</div><div class="chips"><span>French, native</span><span>German, full professional</span><span>English, full professional</span></div>
+      </div>
     </div>
-    <div class="kit rv"><span class="k">Toolkit</span><span>MEDDIC</span><span>Salesforce</span><span>Power BI</span><span>Claude Code</span><span>French native</span><span>German, English fluent</span></div>
     <p class="honest rv"><b>Not my game:</b> high-velocity transactional sales, or managing a sales team.</p>
   </div>
 </section>
@@ -313,7 +329,7 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
         <div class="body">
           <div class="tag">Building materials · 2024 to 2026</div>
           <h3>From a paid blueprint to a platform</h3>
-          <p>A small paid blueprint first, delivered, then the cloud subscription, a transformation SOW and a change request. The US business opened at CFO level.</p>
+          <p>A small paid blueprint first, delivered, then the cloud subscription, a transformation SOW and a change request. Then first meetings with the US business unit.</p>
           <div class="result"><svg class="i"><use href="#i-check"/></svg>4 signatures in 24 months</div>
         </div>
       </article>
@@ -353,9 +369,9 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
       <div>
         <div class="stats">
           <div class="stat rv"><div class="ic"><svg class="i"><use href="#i-mic"/></svg></div><div class="n">Voice</div><div class="l">I dictate, agents execute</div></div>
-          <div class="stat rv" style="--d:1"><div class="ic"><svg class="i"><use href="#i-clock"/></svg></div><div class="n">14</div><div class="l">scheduled agents, reporting by Telegram</div></div>
+          <div class="stat rv" style="--d:1"><div class="ic"><svg class="i"><use href="#i-clock"/></svg></div><div class="n">19</div><div class="l">scheduled jobs, reporting by Telegram</div></div>
           <div class="stat rv" style="--d:2"><div class="ic"><svg class="i"><use href="#i-server"/></svg></div><div class="n">1 mini PC</div><div class="l">self-hosted, my data stays at home</div></div>
-          <div class="stat rv" style="--d:3"><div class="ic"><svg class="i"><use href="#i-shield"/></svg></div><div class="n">780+</div><div class="l">automated tests, a Sunday audit of every open port</div></div>
+          <div class="stat rv" style="--d:3"><div class="ic"><svg class="i"><use href="#i-shield"/></svg></div><div class="n">850+</div><div class="l">automated tests, a Sunday audit of every open port</div></div>
         </div>
         <div class="stack rv"><span>Claude Code</span><span>MCP</span><span>Qdrant</span><span>n8n</span><span>FastAPI</span><span>Docker</span><span>Python</span></div>
       </div>
