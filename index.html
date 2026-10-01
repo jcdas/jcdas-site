@@ -108,6 +108,14 @@ h2 { font-size: clamp(26px, 3.2vw, 34px); font-weight: 600; letter-spacing: -0.0
 .card p { font-size: 15px; color: var(--ink-2); margin-top: 8px; flex: 1; }
 .receipt { margin-top: 18px; padding-top: 14px; border-top: 1px dashed var(--line); font-family: var(--mono); font-size: 12.5px; color: var(--ink); display: flex; gap: 8px; align-items: baseline; }
 .receipt::before { content: "Proof"; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--green); background: var(--green-soft); padding: 2px 8px; border-radius: 999px; flex-shrink: 0; }
+.skills { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 40px; }
+.skill { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 20px; display: flex; flex-direction: column; }
+.skill .ic { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 16px; }
+.skill h3 { font-size: 15.5px; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
+.skill p { font-size: 14px; color: var(--muted); margin-top: 4px; flex: 1; }
+.skill .fact { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13.5px; font-weight: 500; color: var(--ink); }
+@media (max-width: 960px) { .skills { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 520px) { .skills { grid-template-columns: 1fr; } }
 .honest { margin-top: 28px; font-size: 14px; color: var(--muted); max-width: 720px; }
 .honest b { color: var(--ink-2); font-weight: 500; }
 @media (max-width: 900px) { .bento .card, .bento .card.wide { grid-column: span 3; } }
@@ -247,39 +255,14 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
   <div class="wrap">
     <div class="eyebrow rv">Skills</div>
     <h2 class="rv">What I bring to a territory.</h2>
-    <div class="bento">
-      <div class="card wide rv">
-        <div class="ic"><svg class="i"><use href="#i-blueprint"/></svg></div>
-        <h3>Deal architecture</h3>
-        <p>I win on the structure of the agreement, not on the percentage: ramps, credits, conditional terms. Price is the last thing we talk about.</p>
-        <div class="receipt">Defensive renewal turned into a 5-year early renewal with upsell</div>
-      </div>
-      <div class="card wide rv" style="--d:1">
-        <div class="ic"><svg class="i"><use href="#i-factory"/></svg></div>
-        <h3>German buying committees</h3>
-        <p>I find the 2 or 3 people in a Konzern who actually have to say yes, learn what each of them needs, and write to them in German.</p>
-        <div class="receipt">5 Tier 1 industrial groups, on-premise to SaaS</div>
-      </div>
-      <div class="card rv">
-        <div class="ic"><svg class="i"><use href="#i-network"/></svg></div>
-        <h3>Orchestration without authority</h3>
-        <p>Services, legal, pricing, presales and partners aligned on one deadline. None of them report to me.</p>
-        <div class="receipt">20+ colleagues, closed in Q4</div>
-      </div>
-      <div class="card rv" style="--d:1">
-        <div class="ic"><svg class="i"><use href="#i-truck"/></svg></div>
-        <h3>Supply chain domain</h3>
-        <p>Planning, logistics and networks, from the delivery side first. I do not sell what I would not want to implement.</p>
-        <div class="receipt">10 yrs selling, 14 delivering</div>
-      </div>
-      <div class="card rv" style="--d:2">
-        <div class="ic"><svg class="i"><use href="#i-target"/></svg></div>
-        <h3>Full cycle, MEDDIC</h3>
-        <p>From first outbound to close, then renewal and expansion. Forecast and CRM kept clean the same day.</p>
-        <div class="receipt">200% quota at Transporeon, 2020</div>
-      </div>
+    <div class="skills">
+      <div class="skill rv" style="--d:0"><div class="ic"><svg class="i"><use href="#i-blueprint"/></svg></div><h3>Deal architecture</h3><p>Ramps, credits, conditional terms.</p><div class="fact">5-year early renewal, EUR 8M TCV</div></div>
+      <div class="skill rv" style="--d:1"><div class="ic"><svg class="i"><use href="#i-factory"/></svg></div><h3>German buying committees</h3><p>Negotiated in German for 25 years.</p><div class="fact">5 Tier 1 industrial groups today</div></div>
+      <div class="skill rv" style="--d:2"><div class="ic"><svg class="i"><use href="#i-network"/></svg></div><h3>Orchestration</h3><p>Teams that do not report to me.</p><div class="fact">20+ colleagues, one Q4 deadline</div></div>
+      <div class="skill rv" style="--d:3"><div class="ic"><svg class="i"><use href="#i-truck"/></svg></div><h3>Supply chain domain</h3><p>Delivery first, sales second.</p><div class="fact">14 years delivery, 10 selling</div></div>
+      <div class="skill rv" style="--d:4"><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h3>Full cycle, MEDDIC</h3><p>Outbound to close to expansion.</p><div class="fact">200% of quota, Transporeon 2020</div></div>
     </div>
-    <p class="honest rv"><b>What I would not claim:</b> transactional, product-led velocity sales, or running a sales team. If the role needs either at its core, I am the wrong hire.</p>
+    <p class="honest rv"><b>Not my game:</b> high-velocity transactional sales, or managing a sales team.</p>
   </div>
 </section>
 
