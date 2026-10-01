@@ -182,6 +182,7 @@ h2 { font-size: clamp(26px, 3.2vw, 34px); font-weight: 600; letter-spacing: -0.0
 .stat .n { font-size: 26px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
 .stat .l { font-size: 13.5px; color: var(--ink-2); margin-top: 4px; }
 .stack { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+.stack .k { border: 0; background: none; padding: 4px 4px 4px 0; color: var(--muted); }
 .stack span { font-family: var(--mono); font-size: 12px; border: 1px solid var(--line); background: var(--surface); padding: 4px 10px; border-radius: 6px; color: var(--ink-2); }
 @media (max-width: 860px) { .ai .grid { grid-template-columns: 1fr; gap: 40px; } }
 
@@ -368,12 +369,12 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
       </div>
       <div>
         <div class="stats">
-          <div class="stat rv"><div class="ic"><svg class="i"><use href="#i-mic"/></svg></div><div class="n">Voice</div><div class="l">I dictate, agents execute</div></div>
-          <div class="stat rv" style="--d:1"><div class="ic"><svg class="i"><use href="#i-clock"/></svg></div><div class="n">19</div><div class="l">scheduled jobs, reporting by Telegram</div></div>
-          <div class="stat rv" style="--d:2"><div class="ic"><svg class="i"><use href="#i-server"/></svg></div><div class="n">1 mini PC</div><div class="l">self-hosted, my data stays at home</div></div>
-          <div class="stat rv" style="--d:3"><div class="ic"><svg class="i"><use href="#i-shield"/></svg></div><div class="n">850+</div><div class="l">automated tests, a Sunday audit of every open port</div></div>
+          <div class="stat rv"><div class="ic"><svg class="i"><use href="#i-mic"/></svg></div><div class="n">By voice</div><div class="l">I dictate, the AI drafts emails, account plans and decks</div></div>
+          <div class="stat rv" style="--d:1"><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><div class="n">-50%</div><div class="l">preparation time on complex deals</div></div>
+          <div class="stat rv" style="--d:2"><div class="ic"><svg class="i"><use href="#i-clock"/></svg></div><div class="n">19</div><div class="l">routine tasks that run on their own and report to my phone</div></div>
+          <div class="stat rv" style="--d:3"><div class="ic"><svg class="i"><use href="#i-server"/></svg></div><div class="n">At home</div><div class="l">my documents are stored on my own server, not in a public cloud</div></div>
         </div>
-        <div class="stack rv"><span>Claude Code</span><span>MCP</span><span>Qdrant</span><span>n8n</span><span>FastAPI</span><span>Docker</span><span>Python</span></div>
+        <div class="stack rv"><span class="k">Built with</span><span>Claude Code</span><span>MCP</span><span>Qdrant</span><span>n8n</span><span>FastAPI</span><span>Docker</span><span>Python</span></div>
       </div>
     </div>
   </div>
