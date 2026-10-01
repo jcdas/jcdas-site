@@ -116,6 +116,16 @@ h2 { font-size: clamp(26px, 3.2vw, 34px); font-weight: 600; letter-spacing: -0.0
 .skill .fact { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 13.5px; font-weight: 500; color: var(--ink); }
 @media (max-width: 960px) { .skills { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 520px) { .skills { grid-template-columns: 1fr; } }
+.motions { margin-top: 40px; border-top: 1px solid var(--line); }
+.mo { display: grid; grid-template-columns: 36px 1fr auto; gap: 20px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.mo .ic { width: 36px; height: 36px; border-radius: 8px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; }
+.mo b { font-weight: 600; font-size: 16px; }
+.mo small { display: block; color: var(--muted); font-size: 13.5px; }
+.mo .r { font-weight: 600; font-size: 14.5px; text-align: right; white-space: nowrap; }
+.kit { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 28px; }
+.kit span { font-size: 13px; border: 1px solid var(--line); background: var(--surface); padding: 4px 10px; border-radius: 6px; color: var(--ink-2); }
+.kit .k { border: 0; background: none; padding: 0 6px 0 0; font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+@media (max-width: 640px) { .mo { grid-template-columns: 36px 1fr; } .mo .r { grid-column: 2; text-align: left; white-space: normal; } }
 .honest { margin-top: 28px; font-size: 14px; color: var(--muted); max-width: 720px; }
 .honest b { color: var(--ink-2); font-weight: 500; }
 @media (max-width: 900px) { .bento .card, .bento .card.wide { grid-column: span 3; } }
@@ -210,6 +220,12 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
     <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5v.01M7 16.5v.01"/></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9a4.5 4.5 0 0 0 1 9z"/><path d="M12 11v5M9.5 13.5L12 11l2.5 2.5"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M8 20h8M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M10 14l-6-2 1.5-1.5 6 .5 4-4.5a2 2 0 0 1 3 3l-4.5 4 .5 6L13 21l-2-6-3 3v2l-1.5 1-1-3-3-1 1-1.5h2z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
   </defs>
 </svg>
 
@@ -254,14 +270,16 @@ footer a { text-decoration: underline; text-underline-offset: 2px; }
 <section id="skills">
   <div class="wrap">
     <div class="eyebrow rv">Skills</div>
-    <h2 class="rv">What I bring to a territory.</h2>
-    <div class="skills">
-      <div class="skill rv" style="--d:0"><div class="ic"><svg class="i"><use href="#i-blueprint"/></svg></div><h3>Deal architecture</h3><p>Ramps, credits, conditional terms.</p><div class="fact">5-year early renewal, EUR 8M TCV</div></div>
-      <div class="skill rv" style="--d:1"><div class="ic"><svg class="i"><use href="#i-factory"/></svg></div><h3>German buying committees</h3><p>Negotiated in German for 25 years.</p><div class="fact">5 Tier 1 industrial groups today</div></div>
-      <div class="skill rv" style="--d:2"><div class="ic"><svg class="i"><use href="#i-network"/></svg></div><h3>Orchestration</h3><p>Teams that do not report to me.</p><div class="fact">20+ colleagues, one Q4 deadline</div></div>
-      <div class="skill rv" style="--d:3"><div class="ic"><svg class="i"><use href="#i-truck"/></svg></div><h3>Supply chain domain</h3><p>Delivery first, sales second.</p><div class="fact">14 years delivery, 10 selling</div></div>
-      <div class="skill rv" style="--d:4"><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h3>Full cycle, MEDDIC</h3><p>Outbound to close to expansion.</p><div class="fact">200% of quota, Transporeon 2020</div></div>
+    <h2 class="rv">Deal situations I have handled.</h2>
+    <div class="motions rv">
+      <div class="mo"><div class="ic"><svg class="i"><use href="#i-cloud"/></svg></div><div class="t"><b>On-premise to SaaS conversion</b><small>Sensors, pharma, building materials · 2025</small></div><div class="r">3 groups converted</div></div>
+      <div class="mo"><div class="ic"><svg class="i"><use href="#i-doc"/></svg></div><div class="t"><b>Contract negotiation in German</b><small>Konzern procurement and legal: master agreements, schedules, SOWs</small></div><div class="r">3 frameworks signed, 2025</div></div>
+      <div class="mo"><div class="ic"><svg class="i"><use href="#i-scale"/></svg></div><div class="t"><b>Price indexation dispute</b><small>Global tire manufacturer · 2026</small></div><div class="r">Settled at 4,07%</div></div>
+      <div class="mo"><div class="ic"><svg class="i"><use href="#i-plane"/></svg></div><div class="t"><b>Expansion from German HQ to the US</b><small>Building materials group · 2025</small></div><div class="r">CFO, CCO and COO met</div></div>
+      <div class="mo"><div class="ic"><svg class="i"><use href="#i-plus"/></svg></div><div class="t"><b>Net new logos</b><small>EUR 5B+ manufacturers across EMEA · 2020</small></div><div class="r">200% of quota</div></div>
+      <div class="mo"><div class="ic"><svg class="i"><use href="#i-layers"/></svg></div><div class="t"><b>Large mixed portfolio</b><small>15 Tier 1 DACH accounts, licenses and SaaS · 2021 to 2023</small></div><div class="r">EUR 19M TCV</div></div>
     </div>
+    <div class="kit rv"><span class="k">Toolkit</span><span>MEDDIC</span><span>Salesforce</span><span>Power BI</span><span>Claude Code</span><span>French native</span><span>German, English fluent</span></div>
     <p class="honest rv"><b>Not my game:</b> high-velocity transactional sales, or managing a sales team.</p>
   </div>
 </section>
